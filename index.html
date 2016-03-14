@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro timer</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1 class="text-primary text-center">Pomodoro timer</h1>
+    </div>
+</header>
+<section>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-primary" id="start">Start</button>
+                <button class="btn btn-primary" id="stop" disabled>Stop</button>
+                <button class="btn btn-primary" id="reset" >Reset</button>
+            </div>
+            <div class="col-md-offset-4 col-md-2">
+                <h5>Session</h5>
+                <button class="btn btn-primary" id="decrementPomodoro">-</button>
+                <span id="minutesPomodoro"></span>
+                <button class="btn btn-primary" id="incrementPomodoro">+</button>
+            </div>
+            <div class="col-md-2">
+                <h5>Break</h5>
+                <button class="btn btn-primary" id="decrementBreak">-</button>
+                <span id="minutesBreak"></span>
+                <button class="btn btn-primary" id="incrementBreak">+</button>
+            </div>
+        </div>
+        <div id="restMessage">Relax!</div>
+        <div id="clock"></div>
+    </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
