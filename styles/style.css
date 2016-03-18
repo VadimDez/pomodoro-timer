@@ -1,15 +1,27 @@
+body {
+    background-color: #F25F5C;
+}
+
+body.rest {
+    background-color: #00A896;
+}
+
+#restMessage {
+    font-size: 30px;
+    color: #05668D;
+    display: none;
+}
+
+body.rest #restMessage {
+    display: block;
+}
+
 .text-primary {
-    color: red;
+    color: #fff;
 }
 
 #clock {
     font-size: 50px;
-}
-
-#restMessage {
-    display: none;
-    color: green;
-    font-size: 30px;
 }
 
 #progress {
@@ -18,10 +30,31 @@
 
 #progress span {
     position: absolute;
-    top: 70px;
+    top: 78px;
     left: 0;
     width: 100%;
     text-align: center;
     line-height: 40px;
     font-size: 45px;
+}
+
+button:focus {
+    outline: 0 !important;
+}
+
+.btn {
+    background-color: rgba(0, 0, 0, 0.09);
+    border: none;
+}
+
+.btn:hover, .btn:hover:disabled {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.time-action .btn-primary {
+    background-color: transparent;
+}
+
+.time-action .btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.09);
 }
