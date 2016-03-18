@@ -6,7 +6,7 @@ $(function() {
   var minutesCounter = 25;
   var secondsCounter = 0;
   var timer;
-  var $clock = $('#clock');
+  var $clock = $('#progress').find('span');
   var $start = $('#start');
   var $stop = $('#stop');
   var $reset = $('#reset');
@@ -14,6 +14,16 @@ $(function() {
   var $minutesBreak = $('#minutesBreak');
   var $restMessage = $('#restMessage');
   var isRest = false;
+  var $progress = $('#progress');
+
+  $progress.circleProgress({
+    value: 0,
+    size: 200,
+    animation: false,
+    fill: {
+      gradient: ["red", "orange"]
+    }
+  });
 
   function start() {
     minutesCounter = minutes;
