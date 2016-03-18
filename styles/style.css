@@ -11,3 +11,17 @@
     color: green;
     font-size: 30px;
 }
+
+#progress {
+    position: relative;
+}
+
+#progress span {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 45px;
+}

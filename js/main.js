@@ -6,7 +6,8 @@ $(function() {
   var minutesCounter = 25;
   var secondsCounter = 0;
   var timer;
-  var $clock = $('#clock');
+  var $progress = $('#progress');
+  var $clock = $progress.find('span');
   var $start = $('#start');
   var $stop = $('#stop');
   var $reset = $('#reset');
@@ -15,10 +16,17 @@ $(function() {
   var $restMessage = $('#restMessage');
   var isRest = false;
 
+  $progress.circleProgress({
+    value: 0,
+    size: 200,
+    animation: false,
+    fill: {
+      gradient: ["red", "orange"]
+    }
+  });
+
   function start() {
-    minutesCounter = minutes;
-    secondsCounter = seconds;
-    $restMessage.hide();
+    resetSession();
 
     timer = setInterval(function() {
 
@@ -53,6 +61,13 @@ $(function() {
     minutesCounter = minutes;
     secondsCounter = seconds;
     $restMessage.hide();
+
+
+    $progress.circleProgress({
+      fill: {
+        gradient: ["red", "orange"]
+      }
+    });
   }
 
   function rest() {
@@ -60,6 +75,11 @@ $(function() {
     minutesCounter = breakMinutes;
     secondsCounter = breakSeconds;
     $restMessage.show();
+    $progress.circleProgress({
+      fill: {
+        gradient: ["green", "yellow"]
+      }
+    });
   }
 
   function renderMinutes() {
@@ -68,6 +88,7 @@ $(function() {
   }
 
   function renderClock() {
+    $progress.circleProgress({value: 1 - (minutesCounter * 60 + secondsCounter) / (minutes * 60 + seconds)});
     $clock.text(minutesCounter + ':' + secondsCounter);
   }
 
