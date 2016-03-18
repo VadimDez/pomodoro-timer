@@ -13,7 +13,6 @@ $(function() {
   var $reset = $('#reset');
   var $minutesPomodoro = $('#minutesPomodoro');
   var $minutesBreak = $('#minutesBreak');
-  var $restMessage = $('#restMessage');
   var isRest = false;
 
   $progress.circleProgress({
@@ -21,9 +20,12 @@ $(function() {
     size: 200,
     animation: false,
     fill: {
-      gradient: ["red", "orange"]
+      color: '#fff'
     }
   });
+
+  renderMinutes();
+  renderClock();
 
   function start() {
     resetSession();
@@ -57,27 +59,26 @@ $(function() {
   }
 
   function resetSession() {
+    $('body').removeClass('rest');
     isRest = false;
     minutesCounter = minutes;
     secondsCounter = seconds;
-    $restMessage.hide();
-
 
     $progress.circleProgress({
       fill: {
-        gradient: ["red", "orange"]
+        color: '#fff'
       }
     });
   }
 
   function rest() {
+    $('body').addClass('rest');
     isRest = true;
     minutesCounter = breakMinutes;
     secondsCounter = breakSeconds;
-    $restMessage.show();
     $progress.circleProgress({
       fill: {
-        gradient: ["green", "yellow"]
+        color: '#05668D'
       }
     });
   }
@@ -89,7 +90,7 @@ $(function() {
 
   function renderClock() {
     $progress.circleProgress({value: 1 - (minutesCounter * 60 + secondsCounter) / (minutes * 60 + seconds)});
-    $clock.text(minutesCounter + ':' + secondsCounter);
+    $clock.text(('0' + minutesCounter).slice(-2) + ':' + ('0' + secondsCounter).slice(-2));
   }
 
   $start.on('click', function() {
@@ -143,9 +144,4 @@ $(function() {
 
     renderMinutes();
   });
-
-
-  ///
-  renderMinutes();
-  renderClock();
 });
