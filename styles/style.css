@@ -1,5 +1,8 @@
 body {
     background-color: #F25F5C;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
 }
 
 body.rest {
@@ -16,8 +19,11 @@ body.rest #restMessage {
     display: block;
 }
 
-.text-primary {
+h1 {
     color: #fff;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #clock {
@@ -38,23 +44,58 @@ body.rest #restMessage {
     font-size: 45px;
 }
 
-button:focus {
-    outline: 0 !important;
-}
 
-.btn {
+button {
+    font-size: 14px;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 5px;
+    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.09);
     border: none;
 }
 
-.btn:hover, .btn:hover:disabled {
+button:focus {
+    outline: 0 !important;
+}
+
+button:hover, button:hover:disabled {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.time-action .btn-primary {
+.time-action button {
+    line-height: 15px;
+    font-size: 25px;
+    padding: 5px 10px 10px 10px;
     background-color: transparent;
 }
 
-.time-action .btn-primary:hover {
+.time-action button:hover {
     background-color: rgba(0, 0, 0, 0.09);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.col-md-offset-3 {
+    margin-left: 25%;
+}
+
+.col-md-3 {
+    width: 25%;
+    float: left;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row:before, .row:after {
+    display: table;
+    content: ' ';
+}
+.row:after {
+    clear: both;
 }
