@@ -19,7 +19,7 @@ body.rest #restMessage {
     display: block;
 }
 
-.text-primary {
+h1 {
     color: #fff;
     font-size: 36px;
     margin-top: 20px;
@@ -51,26 +51,26 @@ button {
     padding: 7px 14px;
     border-radius: 5px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.09);
+    border: none;
 }
 
 button:focus {
     outline: 0 !important;
 }
 
-.btn {
-    background-color: rgba(0, 0, 0, 0.09);
-    border: none;
-}
-
-.btn:hover, .btn:hover:disabled {
+button:hover, button:hover:disabled {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.time-action .btn-primary {
+.time-action button {
+    line-height: 15px;
+    font-size: 25px;
+    padding: 5px 10px 10px 10px;
     background-color: transparent;
 }
 
-.time-action .btn-primary:hover {
+.time-action button:hover {
     background-color: rgba(0, 0, 0, 0.09);
 }
 
